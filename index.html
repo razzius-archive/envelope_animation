@@ -1,0 +1,32 @@
+<html>
+  <style>
+   img {
+       position:absolute;
+   }
+
+   @keyframes slide {
+       from {top: 0}
+       to {top: 500px}
+   }
+
+   .envelope {
+       animation: slide 2s;
+       transition-timing-function: ease-in-out;
+       animation-fill-mode: forwards;
+   }
+
+   #card {
+       left: 17px;
+       width: 560px;
+       z-index: 1;
+   }
+
+   #overlay {
+       z-index: 2;
+   }
+  </style>
+  <img class="envelope" id="overlay" src="optipng.png">
+  <img id="card" src="card.png">
+  <img class="envelope" id="back" src="back.png">
+</html>
+
