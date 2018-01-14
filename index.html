@@ -1,7 +1,10 @@
 <html>
   <style>
+   .hidden {
+       display: none;
+   }
    img {
-       position:absolute;
+       position: absolute;
    }
 
    @keyframes slide {
@@ -9,7 +12,8 @@
        to {top: 500px}
    }
 
-   .envelope {
+   .animated-envelope {
+       position: absolute;
        animation: slide 2s;
        transition-timing-function: ease-in-out;
        animation-fill-mode: forwards;
@@ -25,8 +29,18 @@
        z-index: 2;
    }
   </style>
-  <img class="envelope" id="overlay" src="optipng.png">
-  <img id="card" src="card.png">
-  <img class="envelope" id="back" src="back.png">
+  <div id="invitation" class="hidden">
+    <img id="card" src="card.png">
+    <div id="envelope">
+      <img id="overlay" src="optipng.png">
+      <img id="back" src="back.png">
+    </div>
+  </div>
+  <script>
+   window.onload = function() {
+       document.getElementById('invitation').className = ''
+       document.getElementById('envelope').className = 'animated-envelope'
+   }
+  </script>
 </html>
 
